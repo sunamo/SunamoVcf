@@ -1,4 +1,5 @@
-﻿global using MixERP.Net.VCards.Models;
+
+global using MixERP.Net.VCards.Models;
 global using MixERP.Net.VCards.Serializer;
 global using MixERP.Net.VCards.Types;
 global using MixERP.Net.VCards;

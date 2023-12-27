@@ -1,3 +1,5 @@
+namespace SunamoVcf.Enums;
+
 public enum SunamoEmailType
 {
     AmericaOnline = 0,

@@ -1,3 +1,7 @@
+using SunamoVcf.Enums;
+
+namespace SunamoVcf;
+
 public class VcfHelper
 {
     public static List<VCard> SunamoVCardsToVCards(List<SunamoVCard> vc)
@@ -47,9 +51,9 @@ public class VcfHelper
 #if ASYNC
     async Task
 #else
-        void
+void
 #endif
-        Serialize(string file, List<SunamoVCard> vc)
+    Serialize(string file, List<SunamoVCard> vc)
     {
         var con = SunamoVCardsToVCards(vc);
         var d = con.Serialize();

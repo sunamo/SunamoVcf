@@ -1,3 +1,7 @@
+using SunamoVcf.Enums;
+
+namespace SunamoVcf;
+
 public class SunamoTelephone
 {
     public SunamoTelephoneType Type { get; set; }
