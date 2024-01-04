@@ -12,3 +12,5 @@ global using MixERP.Net.VCards.Types;
 global using SunamoExceptions;
 
 global using SunamoVcf.Enums;
+global using SunamoExceptions.InSunamoIsDerivedFrom;
+global using SunamoFileExtensions;
