@@ -49,6 +49,6 @@ public class SunamoVCard
 
     private object EmptyIfNull(string firstName)
     {
-        return firstName == null ? string.Empty : (object)firstName;
+        return firstName == null ? string.Empty : firstName;
     }
 }
