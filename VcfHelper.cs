@@ -58,7 +58,7 @@ void
         var con = SunamoVCardsToVCards(vc);
         var d = con.Serialize();
 
-        file += AllExtensions.vcf;
+        file += ".vcf";
 
 
 #if ASYNC
