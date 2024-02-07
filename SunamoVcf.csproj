@@ -1,16 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>24.2.1.2</Version>
+    <Version>24.2.6.2</Version>
     <Description>Working with VCF (Virtual Card File) file format</Description>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MixERP.Net.VCards" Version="1.0.7">
     </PackageReference>
-    <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoExceptions" Version="24.2.1.1" />
+    <PackageReference Include="SunamoExceptions" Version="24.2.6.3" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
