@@ -1,4 +1,4 @@
-namespace SunamoVcf.Enums;
+namespace SunamoVcf;
 
 public enum SunamoEmailType
 {
