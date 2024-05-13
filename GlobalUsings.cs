@@ -8,7 +8,7 @@ global using MixERP.Net.VCards;
 global using MixERP.Net.VCards.Models;
 global using MixERP.Net.VCards.Serializer;
 global using MixERP.Net.VCards.Types;
-global using SunamoVcf.Enums;
+
 global using System.Text;
 global using System.Collections.Generic;
 global using System.Collections;
