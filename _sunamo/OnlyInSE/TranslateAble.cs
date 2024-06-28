@@ -1,3 +1,5 @@
+
+namespace SunamoVcf;
 public class TranslateAble
 {
     
