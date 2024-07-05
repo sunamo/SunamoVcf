@@ -21,3 +21,5 @@ global using SunamoVcf._sunamo.SunamoXlfKeys;
 global using SunamoVcf._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
 global using SunamoVcf._sunamo.SunamoExceptions.OnlyInSE;
 global using SunamoVcf._sunamo.SunamoExceptions._AddedToAllCsproj;
+global using System.Diagnostics;
+global using System.Net;
