@@ -1,18 +1,23 @@
 global using System.Collections.Generic;
 global using System;
 global using System.Linq;
-
 global using System.Threading.Tasks;
 global using System.Data;
 global using MixERP.Net.VCards;
 global using MixERP.Net.VCards.Models;
 global using MixERP.Net.VCards.Serializer;
 global using MixERP.Net.VCards.Types;
-
 global using System.Text;
 global using System.Collections.Generic;
 global using System.Collections;
 global using System.IO;
-
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
+global using SunamoVcf;
+global using SunamoVcf.Enums;
+global using SunamoVcf._sunamo.SunamoStringGetLines;
+global using SunamoVcf._sunamo.SunamoValues;
+global using SunamoVcf._sunamo.SunamoXlfKeys;
+global using SunamoVcf._sunamo.SunamoExceptions.InSunamoIsDerivedFrom;
+global using SunamoVcf._sunamo.SunamoExceptions.OnlyInSE;
+global using SunamoVcf._sunamo.SunamoExceptions._AddedToAllCsproj;

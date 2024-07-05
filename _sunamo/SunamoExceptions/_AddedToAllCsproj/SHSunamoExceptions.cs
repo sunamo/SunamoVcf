@@ -1,5 +1,5 @@
 
-namespace SunamoVcf;
+namespace SunamoVcf._sunamo.SunamoExceptions._AddedToAllCsproj;
 internal class SHSunamoExceptions
 {
     internal static string JoinNL(List<string> l)

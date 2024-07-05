@@ -1,5 +1,5 @@
 
-namespace SunamoVcf;
+namespace SunamoVcf._sunamo.SunamoExceptions.OnlyInSE;
 internal class TranslateAble
 {
     

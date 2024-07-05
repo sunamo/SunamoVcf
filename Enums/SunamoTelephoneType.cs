@@ -1,4 +1,4 @@
-namespace SunamoVcf;
+namespace SunamoVcf.Enums;
 
 public enum SunamoTelephoneType
 {
