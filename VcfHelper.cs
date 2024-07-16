@@ -1,7 +1,5 @@
 namespace SunamoVcf;
 
-
-
 public class VcfHelper
 {
     public static List<VCard> SunamoVCardsToVCards(List<SunamoVCard> vc)
@@ -64,7 +62,7 @@ void
 #if ASYNC
         await
 #endif
-        TFSE.WriteAllText(file, d);
+        TF.WriteAllText(file, d);
     }
 
     public static List<SunamoVCard> Parse(string path)
