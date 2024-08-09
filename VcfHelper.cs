@@ -47,11 +47,11 @@ public class VcfHelper
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    Serialize(string file, List<SunamoVCard> vc)
+        Serialize(string file, List<SunamoVCard> vc)
     {
         var con = SunamoVCardsToVCards(vc);
         var d = con.Serialize();
@@ -62,7 +62,7 @@ void
 #if ASYNC
         await
 #endif
-        TF.WriteAllText(file, d);
+            TF.WriteAllText(file, d);
     }
 
     public static List<SunamoVCard> Parse(string path)

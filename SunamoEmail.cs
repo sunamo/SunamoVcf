@@ -1,7 +1,5 @@
 namespace SunamoVcf;
 
-
-
 public class SunamoEmail
 {
     public SunamoEmailType Type { get; set; }
