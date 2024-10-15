@@ -62,7 +62,7 @@ void
 #if ASYNC
         await
 #endif
-            TF.WriteAllText(file, d);
+            File.WriteAllTextAsync(file, d);
     }
 
     public static List<SunamoVCard> Parse(string path)
