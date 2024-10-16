@@ -11,7 +11,7 @@ global using System.Text;
 global using System.Collections;
 global using System.IO;
 global using SunamoVcf.Enums;
-global using SunamoVcf._sunamo.SunamoValues;
+global using SunamoVcf;
 global using SunamoVcf._sunamo.SunamoExceptions;
 global using System.Diagnostics;
 global using System.Diagnostics.CodeAnalysis;
