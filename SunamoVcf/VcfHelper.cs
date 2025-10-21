@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoVcf;
 
 public class VcfHelper
@@ -54,7 +57,7 @@ void
         Serialize(string file, List<SunamoVCard> vc)
     {
         var con = SunamoVCardsToVCards(vc);
-        var d = con.Serialize();
+        var data = con.Serialize();
 
         file += ".vcf";
 
@@ -62,7 +65,7 @@ void
 #if ASYNC
         await
 #endif
-            File.WriteAllTextAsync(file, d);
+            File.WriteAllTextAsync(file, data);
     }
 
     public static List<SunamoVCard> Parse(string path)
@@ -88,31 +91,31 @@ void
 
     private static IEnumerable<SunamoEmail> Emails(IEnumerable<Email> emails)
     {
-        List<SunamoEmail> l = new();
+        List<SunamoEmail> list = new();
         if (emails != null)
             foreach (var i in emails)
-                l.Add(new SunamoEmail
+                list.Add(new SunamoEmail
                 {
                     EmailAddress = i.EmailAddress,
                     Preference = i.Preference,
                     Type = EnumHelperVcf.Parse<SunamoEmailType>(i.Type)
                 });
 
-        return l;
+        return list;
     }
 
     public static IEnumerable<SunamoTelephone> Telephones(IEnumerable<Telephone> telephones)
     {
-        List<SunamoTelephone> l = new();
+        List<SunamoTelephone> list = new();
         if (telephones != null)
             foreach (var i in telephones)
-                l.Add(new SunamoTelephone
+                list.Add(new SunamoTelephone
                 {
                     Number = i.Number,
                     Type = EnumHelperVcf.Parse<SunamoTelephoneType>(i.Type),
                     Preference = i.Preference
                 });
 
-        return l;
+        return list;
     }
 }
