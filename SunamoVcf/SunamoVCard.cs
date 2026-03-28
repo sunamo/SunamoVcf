@@ -1,54 +1,90 @@
 namespace SunamoVcf;
 
+/// <summary>
+/// Represents a virtual contact card with name, telephone, and email information.
+/// </summary>
 public class SunamoVCard
 {
-    public bool wrapTelInQm = false;
-    public string FirstName { get; set; }
-    public string MiddleName { get; set; }
-    public string LastName { get; set; }
-    public IEnumerable<SunamoTelephone> Telephones { get; set; }
-    public IEnumerable<SunamoEmail> Emails { get; set; }
+    /// <summary>
+    /// Gets or sets whether telephone numbers should be wrapped in quotation marks when converted to string.
+    /// </summary>
+    public bool IsWrappingTelephoneInQuotationMarks { get; set; } = false;
 
+    /// <summary>
+    /// Gets or sets the first name of the contact.
+    /// </summary>
+    public string FirstName { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Gets or sets the middle name of the contact.
+    /// </summary>
+    public string MiddleName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Gets or sets the last name of the contact.
+    /// </summary>
+    public string LastName { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Gets or sets the collection of telephone numbers for the contact.
+    /// </summary>
+    public IEnumerable<SunamoTelephone> Telephones { get; set; } = Enumerable.Empty<SunamoTelephone>();
+
+    /// <summary>
+    /// Gets or sets the collection of email addresses for the contact.
+    /// </summary>
+    public IEnumerable<SunamoEmail> Emails { get; set; } = Enumerable.Empty<SunamoEmail>();
+
+    /// <summary>
+    /// Converts all telephone numbers to a comma-separated string.
+    /// </summary>
+    /// <returns>A comma-separated string of telephone numbers.</returns>
     public string TelephonesToString()
     {
-        var tel = string.Empty;
+        var result = string.Empty;
         if (Telephones != null)
         {
-            var tels = Telephones.Select(t => t.Number).ToList();
-            if (wrapTelInQm)
-                for (var i = 0; i < tels.Count; i++)
-                    tels[i] = "\"" + tels[i] + "\"";
+            var numbers = Telephones.Select(telephone => telephone.Number).ToList();
+            if (IsWrappingTelephoneInQuotationMarks)
+                for (var i = 0; i < numbers.Count; i++)
+                    numbers[i] = "\"" + numbers[i] + "\"";
 
-            tel = string.Join(",", tels);
+            result = string.Join(",", numbers);
         }
 
-        return tel;
+        return result;
     }
 
+    /// <summary>
+    /// Converts all email addresses to a comma-separated string.
+    /// </summary>
+    /// <returns>A comma-separated string of email addresses.</returns>
     public string EmailsToString()
     {
-        var mail = string.Empty;
-        if (Emails != null) mail = string.Join(",", Emails.Select(t => t.EmailAddress));
+        var result = string.Empty;
+        if (Emails != null) result = string.Join(",", Emails.Select(email => email.EmailAddress));
 
-        return mail;
+        return result;
     }
 
+    /// <summary>
+    /// Returns a string representation of the contact including name, telephones, and emails.
+    /// </summary>
+    /// <returns>A formatted string with all contact information.</returns>
     public override string ToString()
     {
-        var fn = EmptyIfNull(FirstName);
-        var mn = EmptyIfNull(MiddleName);
-        var ln = EmptyIfNull(LastName);
+        var firstName = EmptyIfNull(FirstName);
+        var middleName = EmptyIfNull(MiddleName);
+        var lastName = EmptyIfNull(LastName);
 
-        var tel = TelephonesToString();
-        var mail = EmailsToString();
+        var telephoneText = TelephonesToString();
+        var emailText = EmailsToString();
 
-        return $"{fn} {mn} {ln} {tel} {mail}";
+        return $"{firstName} {middleName} {lastName} {telephoneText} {emailText}";
     }
 
-
-    private object EmptyIfNull(string firstName)
+    private string EmptyIfNull(string text)
     {
-        return firstName == null ? string.Empty : firstName;
+        return text ?? string.Empty;
     }
 }

@@ -1,10 +1,22 @@
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 namespace SunamoVcf;
 
+/// <summary>
+/// Represents an email address entry in a virtual contact card.
+/// </summary>
 public class SunamoEmail
 {
+    /// <summary>
+    /// Gets or sets the type of the email address.
+    /// </summary>
     public SunamoEmailType Type { get; set; }
-    public string EmailAddress { get; set; }
+
+    /// <summary>
+    /// Gets or sets the email address string.
+    /// </summary>
+    public string EmailAddress { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Gets or sets the preference order of this email address.
+    /// </summary>
     public int Preference { get; set; }
 }
