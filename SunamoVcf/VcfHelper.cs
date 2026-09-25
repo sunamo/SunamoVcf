@@ -1,7 +1,16 @@
 namespace SunamoVcf;
 
+/// <summary>
+/// Provides methods for converting between SunamoVCard and VCard formats,
+/// as well as serializing and parsing VCF files.
+/// </summary>
 public class VcfHelper
 {
+    /// <summary>
+    /// Converts a list of SunamoVCard objects to a list of VCard objects.
+    /// </summary>
+    /// <param name="sunamoVCards">The list of SunamoVCard objects to convert.</param>
+    /// <returns>A list of VCard objects.</returns>
     public static List<VCard> SunamoVCardsToVCards(List<SunamoVCard> sunamoVCards)
     {
         List<VCard> result = new();
@@ -45,6 +54,11 @@ public class VcfHelper
         return result;
     }
 
+    /// <summary>
+    /// Serializes a list of SunamoVCard objects to a VCF file.
+    /// </summary>
+    /// <param name="filePath">The file path to write the VCF data to. The .vcf extension is appended automatically.</param>
+    /// <param name="sunamoVCards">The list of SunamoVCard objects to serialize.</param>
     public static
         async Task
         Serialize(string filePath, List<SunamoVCard> sunamoVCards)
@@ -57,6 +71,11 @@ public class VcfHelper
         await FileAsync.WriteAllTextAsync(filePath, serializedData);
     }
 
+    /// <summary>
+    /// Parses a VCF file and returns a list of SunamoVCard objects.
+    /// </summary>
+    /// <param name="filePath">The path to the VCF file to parse.</param>
+    /// <returns>A list of SunamoVCard objects parsed from the file.</returns>
     public static List<SunamoVCard> Parse(string filePath)
     {
         var vCards = Deserializer.Deserialize(filePath);
@@ -78,6 +97,11 @@ public class VcfHelper
         return sunamoVCards;
     }
 
+    /// <summary>
+    /// Converts a collection of Email objects to SunamoEmail objects.
+    /// </summary>
+    /// <param name="enumerable">The collection of Email objects to convert.</param>
+    /// <returns>A collection of SunamoEmail objects.</returns>
     private static IEnumerable<SunamoEmail> ConvertEmails(IEnumerable<Email> enumerable)
     {
         List<SunamoEmail> list = new();
@@ -93,6 +117,11 @@ public class VcfHelper
         return list;
     }
 
+    /// <summary>
+    /// Converts a collection of Telephone objects to SunamoTelephone objects.
+    /// </summary>
+    /// <param name="enumerable">The collection of Telephone objects to convert.</param>
+    /// <returns>A collection of SunamoTelephone objects.</returns>
     public static IEnumerable<SunamoTelephone> ConvertTelephones(IEnumerable<Telephone> enumerable)
     {
         List<SunamoTelephone> list = new();
