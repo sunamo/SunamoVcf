@@ -60,11 +60,7 @@ public class VcfHelper
     /// <param name="filePath">The file path to write the VCF data to. The .vcf extension is appended automatically.</param>
     /// <param name="sunamoVCards">The list of SunamoVCard objects to serialize.</param>
     public static
-#if ASYNC
         async Task
-#else
-void
-#endif
         Serialize(string filePath, List<SunamoVCard> sunamoVCards)
     {
         var vCards = SunamoVCardsToVCards(sunamoVCards);
@@ -72,11 +68,7 @@ void
 
         filePath += ".vcf";
 
-#if ASYNC
-        await File.WriteAllTextAsync(filePath, serializedData);
-#else
-        File.WriteAllText(filePath, serializedData);
-#endif
+        await FileAsync.WriteAllTextAsync(filePath, serializedData);
     }
 
     /// <summary>

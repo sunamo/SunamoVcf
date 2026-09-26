@@ -83,8 +83,5 @@ public class SunamoVCard
         return $"{firstName} {middleName} {lastName} {telephoneText} {emailText}";
     }
 
-    private string EmptyIfNull(string text)
-    {
-        return text ?? string.Empty;
-    }
+    private string EmptyIfNull(string text) => text ?? string.Empty;
 }
