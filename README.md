@@ -1,5 +1,10 @@
 # SunamoVcf
 
+## Short description
+
+Knihovna pro práci se souborovým formátem VCF (vizitky) včetně výčtových typů. Součást sbírky pinp s testy a Runnerem.
+
+
 Working with VCF (Virtual Card File) file format
 
 ## Overview
